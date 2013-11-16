@@ -1,7 +1,7 @@
-<% @local_search['objects'][0]['venue'].each do |restaurant|  %>
+<% @local_search['objects'][0..4].each do |restaurant|  %>
   <div>
-    <h1><%= restaurant["name"] %></h1>
-    <h4>lat: <%= restaurant["lat"] %></h4>
-    <h4>long: <%= restaurant["long"] %></h4>
+    <h1><%= restaurant["venue"]["name"] %></h1>
+    <h4>lat: <%= restaurant["venue"]["lat"] %></h4>
+    <h4>long: <%= restaurant["venue"]["long"] %></h4>
   </div>
 <% end %>
