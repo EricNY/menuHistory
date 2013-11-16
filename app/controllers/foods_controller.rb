@@ -4,7 +4,9 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    min_max_array = params[:decade].split(',')
+    @min = min_max_array[0]
+    @max = min_max_array[1]
   end
 
   # GET /foods/1
