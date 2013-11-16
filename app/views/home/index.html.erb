@@ -1,22 +1,131 @@
-<% dishes = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e") %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MenuHistory</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
 
+<body>
+<br><h1 style='text-align:center'>Old Dish Search!</h1><br>
+<p style='text-align:center'><b>Please pick a decade to see a list of the top dishes served back then. Think you can find that dish today?</b></p>
 
+<div class='btn-group-vertical span2' id='buttons'>
+  <button class='btn' id="1850s" type="button">1850s</button>
+  <button class='btn' id="1860s" type="button">1860s</button>
+  <button class='btn' id="1870s" type="button">1870s</button>
+  <button class='btn' id="1880s" type="button">1880s</button>
+  <button class='btn' id="1890s" type="button">1890s</button>
+  <button class='btn' id="1900s" type="button">1900s</button>
+  <button class='btn' id="1910s" type="button">1910s</button>
+  <button class='btn' id="1920s" type="button">1920s</button>
+  <button class='btn' id="1930s" type="button">1930s</button>
+  <button class='btn' id="1940s" type="button">1940s</button>
+  <button class='btn' id="1950s" type="button">1950s</button>
+  <button class='btn' id="1960s" type="button">1960s</button>
+  <button class='btn' id="1970s" type="button">1970s</button>
+  <button class='btn' id="1980s" type="button">1980s</button>
+  <button class='btn' id="1990s" type="button">1990s</button>
+  <button class='btn' id="2000s" type="button">2000s</button>
+  <button class='btn' id="2010s" type="button">2010s</button>
+</div>
+<div>
+  <ul id='menu-items' class='span7'></ul>
+</div>
 
 
 <script>
-  $.getJSON("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e", function(data) {
-    console.log(data);
-    var items = [];
-    $.each( data, function( key, val ) {
-      items.push( "<li id='" + key + "'>" + val + "</li>" );
+  $(document).ready(function(){
+
+    $('#1850s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'lizard on a spit'+'</li>');
     });
 
-    $( "<ul/>", {
-      "class": "my-new-list",
-      html: items.join( "" )
-    }).appendTo( "body" );
-  });
-  $(function(){
-  alert("I'm a ready shortcut");
-});
+    $('#1860s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Wenson'+'</li>');
+    });
+
+    $('#1870s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Hannah Jane'+'</li>');
+    });
+
+    $('#1880s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Julian'+'</li>');
+    });
+
+    $('#1890s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Eric'+'</li>');
+    });
+
+    $('#1900s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Jeffrey'+'</li>');
+    });
+
+    $('#1910s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Michael'+'</li>');
+    });
+
+    $('#1920s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'David'+'</li>');
+    });
+
+    $('#1930s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Nimit'+'</li>');
+    });
+
+    $('#1940s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Library'+'</li>');
+    });
+
+    $('#1950s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Frog'+'</li>');
+    });
+
+    $('#1960s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Turtle'+'</li>');
+    });
+
+    $('#1970s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Chicken'+'</li>');
+    });
+
+    $('#1980s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Aligator pear'+'</li>');
+    });
+
+    $('#1990s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'foods'+'</li>');
+    });
+
+    $('#2000s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'drinks'+'</li>');
+    });
+
+    $('#2010s').on('click', function(){
+      $('#menu-items').empty();
+      $('#menu-items').append('<li>'+'Go Fullstack!'+'</li>');
+    });
+
+
+  })
 </script>
+
+</body>
+</html>
