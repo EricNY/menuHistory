@@ -10,10 +10,7 @@
   -moz-box-shadow:inset 0px 8px 0px 0px #fce2c1;
   -webkit-box-shadow:inset 0px 8px 0px 0px #fce2c1;
   box-shadow:inset 0px 8px 0px 0px #fce2c1;
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
-  background:-moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
-  background-color:#ffc477;
+  background-color:transparent;
   -webkit-border-top-left-radius:15px;
   -moz-border-radius-topleft:15px;
   border-top-left-radius:15px;
@@ -40,13 +37,7 @@
   text-decoration:none;
   text-align:center;
   text-shadow:2px 2px 0px #cc9f52;
-}
-.classname:hover {
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
-  background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
-  background-color:#fb9e25;
-}.classname:active {
+}.btn:active {
   position:relative;
   top:1px;
 }
