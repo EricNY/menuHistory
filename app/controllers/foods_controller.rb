@@ -7,7 +7,8 @@ class FoodsController < ApplicationController
     min_max_array = params[:decade].split(',')
     @min = min_max_array[0]
     @max = min_max_array[1]
-    @decade = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity")
+    @decade_popular = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity")
+    @decade_obscure = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=obscurity")
   end
 
   # GET /foods/1
