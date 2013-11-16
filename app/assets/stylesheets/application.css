@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  background-attachment: fixed;
+  background-image: url('http://fc07.deviantart.net/fs31/f/2008/207/8/8/Oriental_Foods_Background__3_by_iSpaz247.jpg');
+  width: 100%;
+}

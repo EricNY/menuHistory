@@ -1,6 +1,7 @@
 MenuHistory::Application.routes.draw do
+  # get "home/index"
   resources :foods
-
+  resources :home
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +42,7 @@ MenuHistory::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
