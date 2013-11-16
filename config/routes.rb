@@ -2,6 +2,8 @@ MenuHistory::Application.routes.draw do
   # get "home/index"
   resources :foods
   resources :home
+
+  get '/locu/:name' => 'foods#local_menu_search', as: :locu
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

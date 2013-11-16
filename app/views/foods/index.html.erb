@@ -1,31 +1,11 @@
-<h1>Listing foods</h1>
+<% @decade = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=1851&max_year=1860&sort_by=popularity") %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Dish</th>
-      <th>Year</th>
-      <th>Qty</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.dish %></td>
-        <td><%= food.year %></td>
-        <td><%= food.qty %></td>
-        <td><%= link_to 'Show', food %></td>
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Food', new_food_path %>
+<% @decade["dishes"][0..9].each do |dish|  %>
+  <div style="inline-block;">
+    <h1 data-name=<%=dish["name"]%>><%= dish["name"] %></h1>
+    <h4>On <%= dish["menus_appeared"]%> menus</h4>
+    <h4>First appeared in <%= dish["first_appeared"] %></h4>
+    <h4>Las appeared in <%= dish["last_appeared"] %></h4>
+    <a href=<%= locu_path(dish["name"]) %>><%= dish["name"] %></a>
+  </div>
+<% end %>
