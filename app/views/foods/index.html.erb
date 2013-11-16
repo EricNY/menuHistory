@@ -1,5 +1,16 @@
-<% @decade["dishes"][0..9].each do |dish|  %>
-  <div style="inline-block" class="boxed">
+<% @decade_popular["dishes"][0..9].each do |dish|  %>
+  <div class="boxed">
+    <h1><%= dish["name"] %></h1>
+    <img src="http://<%= dish["name"] %>.jpg.to" alt="food image" height="42" width="42">
+    <h4>On <%= dish["menus_appeared"]%> menus</h4>
+    <h4>First appeared in <%= dish["first_appeared"] %></h4>
+    <h4>Last appeared in <%= dish["last_appeared"] %></h4>
+    <a href=<%= locu_path(dish["name"]) %>><%= dish["name"] %></a>
+  </div>
+<% end %>
+
+<% @decade_obscure["dishes"][0..9].each do |dish|  %>
+  <div style="background-color: green;" class="boxed">
     <h1><%= dish["name"] %></h1>
     <img src="http://<%= dish["name"] %>.jpg.to" alt="food image" height="42" width="42">
 
