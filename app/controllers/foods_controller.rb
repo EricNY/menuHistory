@@ -4,7 +4,10 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    min_max_array = params[:decade].split(',')
+    @min = min_max_array[0]
+    @max = min_max_array[1]
+    @decade = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity")
   end
 
   # GET /foods/1
@@ -13,10 +16,8 @@ class FoodsController < ApplicationController
   end
 
   def local_menu_search
-    @name = params[:name]
+    @name = params[:name].split(' ').join('+')
     @local_search = HTTParty.get("http://api.locu.com/v1_0/menu_item/search/?api_key=6aa048a34d1b96643052e2b69318afddb0b53b21&name=#{@name}")
-    @local_lat = @local_search['objects'][0]['venue']['lat']
-    @local_lon = @local_search['objects'][0]['venue']['long']
   end
 
   # GET /foods/new

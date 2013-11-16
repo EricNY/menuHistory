@@ -11,121 +11,29 @@
 <br><h1 style='text-align:center'>Old Dish Search!</h1><br>
 <p style='text-align:center'><b>Please pick a decade to see a list of the top dishes served back then. Think you can find that dish today?</b></p>
 
-<div class='btn-group-vertical span2' id='buttons'>
-  <button class='btn' id="1850s" type="button">1850s</button>
-  <button class='btn' id="1860s" type="button">1860s</button>
-  <button class='btn' id="1870s" type="button">1870s</button>
-  <button class='btn' id="1880s" type="button">1880s</button>
-  <button class='btn' id="1890s" type="button">1890s</button>
-  <button class='btn' id="1900s" type="button">1900s</button>
-  <button class='btn' id="1910s" type="button">1910s</button>
-  <button class='btn' id="1920s" type="button">1920s</button>
-  <button class='btn' id="1930s" type="button">1930s</button>
-  <button class='btn' id="1940s" type="button">1940s</button>
-  <button class='btn' id="1950s" type="button">1950s</button>
-  <button class='btn' id="1960s" type="button">1960s</button>
-  <button class='btn' id="1970s" type="button">1970s</button>
-  <button class='btn' id="1980s" type="button">1980s</button>
-  <button class='btn' id="1990s" type="button">1990s</button>
-  <button class='btn' id="2000s" type="button">2000s</button>
-  <button class='btn' id="2010s" type="button">2010s</button>
-</div>
+<!-- <div class='btn-group-vertical span2' id='buttons'> -->
+  <a href=<%= foods_path('1851,1859') %> class="btn btn-primary btn-lg active" role="button">1850s</a>
+  <a href=<%= foods_path('1860,1869') %> class="btn btn-primary btn-lg active" role="button">1860s</a>
+  <a href=<%= foods_path('1870,1879') %> class="btn btn-primary btn-lg active" role="button">1870s</a>
+  <a href=<%= foods_path('1880,1889') %> class="btn btn-primary btn-lg active" role="button">1880s</a>
+  <a href=<%= foods_path('1890,1899') %> class="btn btn-primary btn-lg active" role="button">1890s</a>
+  <a href=<%= foods_path('1900,1909') %> class="btn btn-primary btn-lg active" role="button">1900s</a>
+  <a href=<%= foods_path('1910,1919') %> class="btn btn-primary btn-lg active" role="button">1910s</a>
+  <a href=<%= foods_path('1920,1929') %> class="btn btn-primary btn-lg active" role="button">1920s</a>
+  <a href=<%= foods_path('1930,1939') %> class="btn btn-primary btn-lg active" role="button">1930s</a>
+  <a href=<%= foods_path('1940,1949') %> class="btn btn-primary btn-lg active" role="button">1940s</a>
+  <a href=<%= foods_path('1950,1959') %> class="btn btn-primary btn-lg active" role="button">1950s</a>
+  <a href=<%= foods_path('1960,1969') %> class="btn btn-primary btn-lg active" role="button">1960s</a>
+  <a href=<%= foods_path('1970,1979') %> class="btn btn-primary btn-lg active" role="button">1970s</a>
+  <a href=<%= foods_path('1980,1989') %> class="btn btn-primary btn-lg active" role="button">1980s</a>
+  <a href=<%= foods_path('1990,1999') %> class="btn btn-primary btn-lg active" role="button">1990s</a>
+  <a href=<%= foods_path('2000,2009') %> class="btn btn-primary btn-lg active" role="button">2000s</a>
+  <a href=<%= foods_path('2010,2013') %> class="btn btn-primary btn-lg active" role="button">2010s</a>
+<!-- </div> -->
 <div>
   <ul id='menu-items' class='span7'></ul>
 </div>
 
-
-<script>
-  $(document).ready(function(){
-
-    $('#1850s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'lizard on a spit'+'</li>');
-    });
-
-    $('#1860s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Wenson'+'</li>');
-    });
-
-    $('#1870s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Hannah Jane'+'</li>');
-    });
-
-    $('#1880s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Julian'+'</li>');
-    });
-
-    $('#1890s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Eric'+'</li>');
-    });
-
-    $('#1900s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Jeffrey'+'</li>');
-    });
-
-    $('#1910s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Michael'+'</li>');
-    });
-
-    $('#1920s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'David'+'</li>');
-    });
-
-    $('#1930s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Nimit'+'</li>');
-    });
-
-    $('#1940s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Library'+'</li>');
-    });
-
-    $('#1950s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Frog'+'</li>');
-    });
-
-    $('#1960s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Turtle'+'</li>');
-    });
-
-    $('#1970s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Chicken'+'</li>');
-    });
-
-    $('#1980s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Aligator pear'+'</li>');
-    });
-
-    $('#1990s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'foods'+'</li>');
-    });
-
-    $('#2000s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'drinks'+'</li>');
-    });
-
-    $('#2010s').on('click', function(){
-      $('#menu-items').empty();
-      $('#menu-items').append('<li>'+'Go Fullstack!'+'</li>');
-    });
-
-
-  })
-</script>
 
 </body>
 </html>

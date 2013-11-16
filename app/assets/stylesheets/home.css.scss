@@ -6,6 +6,38 @@
   display: inline;
 }
 
-#buttons {
-  margin: none;
+.btn {
+  -moz-box-shadow:inset 0px 8px 0px 0px #fce2c1;
+  -webkit-box-shadow:inset 0px 8px 0px 0px #fce2c1;
+  box-shadow:inset 0px 8px 0px 0px #fce2c1;
+  background-color:transparent;
+  -webkit-border-top-left-radius:15px;
+  -moz-border-radius-topleft:15px;
+  border-top-left-radius:15px;
+  -webkit-border-top-right-radius:15px;
+  -moz-border-radius-topright:15px;
+  border-top-right-radius:15px;
+  -webkit-border-bottom-right-radius:15px;
+  -moz-border-radius-bottomright:15px;
+  border-bottom-right-radius:15px;
+  -webkit-border-bottom-left-radius:15px;
+  -moz-border-radius-bottomleft:15px;
+  border-bottom-left-radius:15px;
+  text-indent:0;
+  border:4px solid #eeb44f;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:28px;
+  font-weight:bold;
+  font-style:normal;
+  height:73px;
+  line-height:73px;
+  width:169px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:2px 2px 0px #cc9f52;
+}.btn:active {
+  position:relative;
+  top:1px;
 }
