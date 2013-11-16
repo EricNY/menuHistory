@@ -20,6 +20,7 @@ class FoodsController < ApplicationController
     @local_search = HTTParty.get("http://api.locu.com/v1_0/menu_item/search/?api_key=6aa048a34d1b96643052e2b69318afddb0b53b21&name=#{@name}")
     @local_lat = @local_search['objects'][0]['venue']['lat']
     @local_lon = @local_search['objects'][0]['venue']['long']
+    @local_lat
   end
 
   # GET /foods/new
