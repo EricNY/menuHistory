@@ -1,3 +1,7 @@
+
+<h1><%= @local_lat %></h1>
+<h1><%= @local_lon %></h1>
+
 <% @local_search['objects'][0..4].each do |restaurant|  %>
   <div>
     <h1><%= restaurant["venue"]["name"] %></h1>
@@ -10,4 +14,88 @@
 var lat = <%= @local_search['objects'][0]restaurant["venue"]["lat"] %>
 var lat2 = <%= @local_search['objects'][1]restaurant["venue"]["lat"] %>
 var lat3 = <%= @local_search['objects'][2]restaurant["venue"]["lat"] %>
-var lat4 = <%= @local_search['objects'][3]restaurant["venue"]["lat"] %>
+var lat4 = <%= @local_search['objects'][3]restaurant["venue"]["lat"] %> -->
+
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map-canvas { height: 800px; width: 400px }
+</style>
+
+<div id="map-canvas"/></div>
+
+
+<script>
+        //google maps API
+  var restaurant_lat = "<%= params[:lat] %>";
+  var restaurant_lon = "<%= params[:lon] %>";
+  var restaurant_name = "<%= params[:name] %>";
+  var restaurants = [];
+
+
+function initialize() {
+
+   // // first remove all markers if there are any
+
+   //      deleteOverlays();
+
+  // initialize new google maps LatLng object
+  var myLatlng = new google.maps.LatLng(40.6928, -73.9903);
+
+  // set the map options hash
+  var mapOptions = {
+    center: myLatlng,
+    zoom: 13,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  // Add the marker to the map
+
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    title: restaurant_name
+  });
+
+  // var markersArray = [];
+
+  // Add the marker to the map by calling setMap()
+   marker.setMap(map);
+
+
+  // Add the marker to the map by calling setMap()
+      // for( i = 0; i < restaurants.length ; i++)
+      //   restaurant_lat = restaurants[i][:lat];
+      //   restaurant_lon = restaurants[i][:lon];
+      //   restaurant_name = restaurants[i][:name];
+      //   marker.setMap(map);
+      // }
+}
+
+
+
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: restaurant_name
+  // });
+
+  // infowindow.open(map,marker);
+
+  // // add marker in markers array
+  // markersArray.push(marker);
+
+  // function deleteOverlays() {
+  //   if (markersArray) {
+  //     for (i = 0; i < markersArray.length; i++) {
+  //       markersArray[i].setMap(null);
+  //     }
+  //   markersArray.length = 0;
+  //   }
+  // };
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+</script>
+
