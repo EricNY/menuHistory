@@ -1,2 +1,13 @@
-<h1><%= @local_lat %></h1>
-<h1><%= @local_lon %></h1>
+<% @local_search['objects'][0..4].each do |restaurant|  %>
+  <div>
+    <h1><%= restaurant["venue"]["name"] %></h1>
+    <h4>lat: <%= restaurant["venue"]["lat"] %></h4>
+    <h4>long: <%= restaurant["venue"]["long"] %></h4>
+  </div>
+<% end %>
+
+<!--
+var lat = <%= @local_search['objects'][0]restaurant["venue"]["lat"] %>
+var lat2 = <%= @local_search['objects'][1]restaurant["venue"]["lat"] %>
+var lat3 = <%= @local_search['objects'][2]restaurant["venue"]["lat"] %>
+var lat4 = <%= @local_search['objects'][3]restaurant["venue"]["lat"] %>
