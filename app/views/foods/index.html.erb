@@ -1,4 +1,4 @@
-<% @decade = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=1851&max_year=1860&sort_by=popularity") %>
+<% @decade = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity") %>
 
 <% @decade["dishes"][0..9].each do |dish|  %>
   <div style="inline-block;">
