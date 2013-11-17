@@ -5,8 +5,13 @@
     <h4>On <%= dish["menus_appeared"]%> menus</h4>
     <h4>First appeared in <%= dish["first_appeared"] %></h4>
     <h4>Last appeared in <%= dish["last_appeared"] %></h4>
-    <a href=<%= locu_path(dish["name"]) %>><%= dish["name"] %></a>
+    <form method="link" action=<%= locu_path(dish["name"]) %>>
+      <input type="submit" value="Find This Dish Today!">
+    </form>
   </div>
+
+
+
 <% end %>
 
 <div id="timeline-embed">
