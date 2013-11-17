@@ -1,20 +1,18 @@
 
-<<<<<<< HEAD
-=======
 <h1><%= @local_lat %></h1>
 <h1><%= @local_lon %></h1>
 
->>>>>>> 2a591923bab1bf1ce54293ce3b11b4c4b8ec90fd
+
 
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
-<<<<<<< HEAD
+
   #map-canvas {
     height: 800px; width: 1200px;
     margin: 50px auto;
   }
-=======
+
 
   #map-canvas {
     height: 500px;
@@ -27,7 +25,6 @@
 
   }
 
->>>>>>> 2a591923bab1bf1ce54293ce3b11b4c4b8ec90fd
 </style>
 
 
@@ -57,12 +54,7 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  // Add the marker to the map
 
-
-  // var markersArray = [];
-
-  // Add the marker to the map by calling setMap()
 
 
   <% @local_search['objects'].each do |obj| %>
@@ -78,25 +70,6 @@ function initialize() {
 
 }
 
-
-
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: restaurant_name
-  // });
-
-  // infowindow.open(map,marker);
-
-  // // add marker in markers array
-  // markersArray.push(marker);
-
-  // function deleteOverlays() {
-  //   if (markersArray) {
-  //     for (i = 0; i < markersArray.length; i++) {
-  //       markersArray[i].setMap(null);
-  //     }
-  //   markersArray.length = 0;
-  //   }
-  // };
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
