@@ -1,11 +1,20 @@
 
+<<<<<<< HEAD
+=======
 <h1><%= @local_lat %></h1>
 <h1><%= @local_lon %></h1>
 
+>>>>>>> 2a591923bab1bf1ce54293ce3b11b4c4b8ec90fd
 
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
+<<<<<<< HEAD
+  #map-canvas {
+    height: 800px; width: 1200px;
+    margin: 50px auto;
+  }
+=======
 
   #map-canvas {
     height: 500px;
@@ -18,6 +27,7 @@
 
   }
 
+>>>>>>> 2a591923bab1bf1ce54293ce3b11b4c4b8ec90fd
 </style>
 
 
@@ -36,12 +46,12 @@ function initialize() {
    //      deleteOverlays();
 
   // initialize new google maps LatLng object
-  var myLatlng = new google.maps.LatLng(40.6928, -73.9903);
+  var myLatlng = new google.maps.LatLng(<%= @local_search['objects'][0]['venue']['lat'] %>, <%= @local_search['objects'][0]['venue']['long'] %>);
 
   // set the map options hash
   var mapOptions = {
     center: myLatlng,
-    zoom: 11,
+    zoom: 3,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -55,11 +65,11 @@ function initialize() {
   // Add the marker to the map by calling setMap()
 
 
-  <% @local_search['objects'].first(5).each do |obj| %>
+  <% @local_search['objects'].each do |obj| %>
 
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(<%=obj['venue']['lat']%>, <%=obj['venue']['long']%>),
-      title: "<%=obj['name'].strip%>"
+      title: "<%=obj['venue']['name'].strip%>"
     });
     marker.setMap(map);
 
