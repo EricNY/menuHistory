@@ -1,6 +1,38 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
+  def json_output
+    @decade_popular = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity")
+    output = []
+
+
+    @decade_popular["dishes"][0..9].each do |dish|
+      img_name = dish["name"].gsub(/[^\w]/, "");
+
+      output << {
+          startDate: ["1850","#{dish["first_appeared"]}"].max,
+          endDate: ["2012","#{dish["last_appeared"]}"].min,
+          headline: dish["name"],
+          asset: {media: "http://#{img_name}.jpg.to"}
+      }
+    end
+
+    json_obj = {
+      timeline: {
+      headline:"Dish on Dishes",
+      type:"default",
+      text:"Brought to you by NYPL",
+      startDate: "1850",
+      date: output
+      }
+    };
+
+    respond_to do |format|
+      format.json { render json:json_obj }
+    end
+
+  end
+
   # GET /foods
   # GET /foods.json
   def index

@@ -7,6 +7,9 @@ root to: "home#index"
   get '/locu/:name' => 'foods#local_menu_search', as: :locu
   get '/yelp/:name' => 'foods#yelp', as: :yelp
   get '/foods/:decade' => 'foods#index', as: :foods
+
+  get '/decade_data' => 'foods#json_output'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
