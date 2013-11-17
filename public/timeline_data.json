@@ -1,14 +1,14 @@
-storyjs_jsonp_data = {
+{
     "timeline":
     {
         "headline":"Dish on Dishes",
         "type":"default",
-		"text":"Brought to you by NYPL",
-		"startDate":"1850",
+    "text":"Brought to you by NYPL",
+    "startDate":"1850",
         "date": [
             {
                 "startDate":"1850",
-				"endDate":"2012",
+        "endDate":"2012",
                 "headline":"Tea",
                 "text":"<p>Appeared on 4700 Menus. Highest price: $25.</p>",
                 "asset":

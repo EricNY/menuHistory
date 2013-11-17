@@ -19,7 +19,7 @@ border-radius:10px;
 
 body
 {
-background-image:url('http://fc07.deviantart.net/fs31/f/2008/207/8/8/Oriental_Foods_Background__3_by_iSpaz247.jpg');
+background-image:url('http://historyrocket.com/images/Food-History-In-Italy.jpg');
 background-repeat:no-repeat;
 background-attachment:fixed;
 background-position:center;
@@ -34,6 +34,11 @@ width: 100%;
   width: 100%;
 }
 .span12 {
+  width: 100%;
+}
+
+#timeline-embed {
+  height: 400px;
   width: 100%;
 }
 

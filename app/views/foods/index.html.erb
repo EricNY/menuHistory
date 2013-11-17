@@ -8,3 +8,21 @@
     <a href=<%= locu_path(dish["name"]) %>><%= dish["name"] %></a>
   </div>
 <% end %>
+
+<div id="timeline-embed">
+  <!-- test -->
+
+</div>
+
+<script>
+  $(document).ready(function() {
+
+      createStoryJS({
+          type:       'timeline',
+          width:      '100%',
+          height:     '300px',
+          source:     '/timeline_data.json',
+          embed_id:   'timeline-embed'
+      });
+  });
+</script>
