@@ -2,6 +2,7 @@
 <h1><%= @local_lat %></h1>
 <h1><%= @local_lon %></h1>
 
+
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
@@ -10,6 +11,20 @@
     height: 800px; width: 1200px;
     margin: 50px auto;
   }
+
+
+
+  #map-canvas {
+    height: 500px;
+    width: 400px;
+    text-align: center;
+    padding-left: 500px;
+    float: center;
+    clear: both;
+    display: inline-block;
+
+  }
+
 
 </style>
 
@@ -40,12 +55,7 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  // Add the marker to the map
 
-
-  // var markersArray = [];
-
-  // Add the marker to the map by calling setMap()
 
 
   <% @local_search['objects'].each do |obj| %>
@@ -61,25 +71,6 @@ function initialize() {
 
 }
 
-
-
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: restaurant_name
-  // });
-
-  // infowindow.open(map,marker);
-
-  // // add marker in markers array
-  // markersArray.push(marker);
-
-  // function deleteOverlays() {
-  //   if (markersArray) {
-  //     for (i = 0; i < markersArray.length; i++) {
-  //       markersArray[i].setMap(null);
-  //     }
-  //   markersArray.length = 0;
-  //   }
-  // };
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
