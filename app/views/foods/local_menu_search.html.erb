@@ -2,22 +2,25 @@
 <h1><%= @local_lat %></h1>
 <h1><%= @local_lon %></h1>
 
-<% @local_search['objects'][0..4].each do |restaurant|  %>
-  <div>
-    <h1><%= restaurant["venue"]["name"] %></h1>
-    <h4>lat: <%= restaurant["venue"]["lat"] %></h4>
-    <h4>long: <%= restaurant["venue"]["long"] %></h4>
-  </div>
-<% end %>
+<!--  -->
 
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
-  #map-canvas { height: 800px; width: 400px; float: left; clear: both }
+  #map-canvas {
+    height: 500px;
+    width: 400px;
+    text-align: center;
+    padding-left: 500px;
+    float: center;
+    clear: both;
+    display: inline-block;
+
+  }
 </style>
 
 
-<div id="map-canvas"/></div>
+<div id="map-canvas" style="padding-left: 50px"/></div>
 
 
 <script>
