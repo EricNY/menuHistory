@@ -1,5 +1,7 @@
 MenuHistory::Application.routes.draw do
   # get "home/index"
+
+root to: "home#index"
   resources :home
 
   get '/locu/:name' => 'foods#local_menu_search', as: :locu

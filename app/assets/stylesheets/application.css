@@ -19,11 +19,9 @@ border-radius:10px;
 
 body
 {
-background-image:url('http://historyrocket.com/images/Food-History-In-Italy.jpg');
 background-repeat:no-repeat;
 background-attachment:fixed;
 background-position:center;
-background-repeat: repeat-x;
 width: 100%;
 }
 
