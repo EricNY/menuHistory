@@ -2,6 +2,9 @@ class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   def json_output
+    min_max_array = params[:decade].split(',')
+    @min = min_max_array[0]
+    @max = min_max_array[1]
     @decade_popular = HTTParty.get("http://api.menus.nypl.org/dishes?token=selsce5qphehgzeqw2cke6jb2e&min_year=#{@min}&max_year=#{@max}&sort_by=popularity")
     output = []
 
@@ -22,7 +25,7 @@ class FoodsController < ApplicationController
       headline:"Dish on Dishes",
       type:"default",
       text:"Brought to you by NYPL",
-      startDate: "1850",
+      startDate: "#{@min}",
       date: output
       }
     };

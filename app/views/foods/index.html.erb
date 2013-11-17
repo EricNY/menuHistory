@@ -25,7 +25,7 @@
           type:       'timeline',
           width:      '100%',
           height:     '300px',
-          source:      "/decade_data.json",
+          source:      "/decade_data.json?decade=<%=@min%>,<%=@max%>",
           embed_id:   'timeline-embed'
       });
   });
