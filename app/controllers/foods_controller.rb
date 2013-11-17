@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
 
   def local_menu_search
     @name = params[:name].split(' ').join('+')
-    @local_search = HTTParty.get("http://api.locu.com/v1_0/menu_item/search/?api_key=6aa048a34d1b96643052e2b69318afddb0b53b21&name=#{@name}")
+    @local_search = HTTParty.get("http://api.locu.com/v1_0/menu_item/search/?api_key=6aa048a34d1b96643052e2b69318afddb0b53b21&name=#{@name}&radius=1000")
   end
 
   # GET /foods/new

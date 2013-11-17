@@ -10,25 +10,22 @@
   </div>
 <% end %>
 
-
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
-  #map-canvas { height: 800px; width: 400px }
+  #map-canvas { height: 800px; width: 400px; float: left; clear: both }
 </style>
+
 
 <div id="map-canvas"/></div>
 
 
 <script>
-        //google maps API
-  var restaurant_lat = "<%= params[:lat] %>";
-  var restaurant_lon = "<%= params[:lon] %>";
-  var restaurant_name = "<%= params[:name] %>";
-  var restaurants = [];
 
 
+           //google maps API
 function initialize() {
+
 
    // // first remove all markers if there are any
 
@@ -48,24 +45,23 @@ function initialize() {
 
   // Add the marker to the map
 
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    title: restaurant_name
-  });
 
   // var markersArray = [];
 
   // Add the marker to the map by calling setMap()
-   marker.setMap(map);
 
 
-  // Add the marker to the map by calling setMap()
-      // for( i = 0; i < restaurants.length ; i++)
-      //   restaurant_lat = restaurants[i][:lat];
-      //   restaurant_lon = restaurants[i][:lon];
-      //   restaurant_name = restaurants[i][:name];
-      //   marker.setMap(map);
-      // }
+  <% @local_search['objects'].first(5).each do |obj| %>
+
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(<%=obj['venue']['lat']%>, <%=obj['venue']['long']%>),
+      title: "<%=obj['name'].strip%>"
+    });
+    marker.setMap(map);
+
+  <% end %>
+
+
 }
 
 
