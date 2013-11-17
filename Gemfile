@@ -6,7 +6,8 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-
+gem 'debugger'
+gem "quiet_assets"
 gem 'httparty'
 
 # Use SCSS for stylesheets
