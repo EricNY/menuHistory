@@ -5,8 +5,9 @@
 
 body
 {
-  background-image:url('http://wallpapers.windowsace.com/pics/j/a/japanese-food-wallpaper-b-o-ibackgroundz.com.jpg');
+  background-image:url('http://fc09.deviantart.net/fs7/i/2005/252/b/7/Cup__Fork_and_Spoon_by_3Darts.jpg');
   background-size: 100%;
+  opacity: 0.9;
 }
 
 #menu-items{
@@ -26,14 +27,21 @@ body
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
-  font-size:450%;
+  font-size:400%;
+  font-color:black;
+}
+
+h1
+{
+color:black;
+font-size:150%;
 }
 
 
 .btn {
-  -moz-box-shadow:inset 0px 8px 0px 0px #fce2c1;
-  -webkit-box-shadow:inset 0px 8px 0px 0px #fce2c1;
-  box-shadow:inset 0px 8px 0px 0px #fce2c1;
+  -moz-box-shadow:inset 0px 8px 0px 0px gray;
+  -webkit-box-shadow:inset 0px 8px 0px 0px gray;
+  box-shadow:inset 0px 4px 0px 0px gray;
   background-color:transparent;
   -webkit-border-top-left-radius:15px;
   -moz-border-radius-topleft:15px;
@@ -48,10 +56,10 @@ body
   -moz-border-radius-bottomleft:15px;
   border-bottom-left-radius:15px;
   text-indent:0;
-  border:4px solid #eeb44f;
+  border:2px solid black;
   display:inline-block;
-  color:#ffffff;
-  font-family:Arial;
+  font-color: black;
+  font-family:Helvetica;
   font-size:36px;
   font-weight:bold;
   font-style:normal;
@@ -60,7 +68,7 @@ body
   width:338px;
   text-decoration:none;
   text-align:center;
-  text-shadow:2px 2px 0px #cc9f52;
+  // text-shadow:2px 2px 0px #cc9f52;
   margin: 10px;
 }.btn:active {
   position:relative;
